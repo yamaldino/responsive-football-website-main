@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Real Madrid vs Atletico Madrid</title>
+
+<style>
+body {
+    background:#f5f5f5;
+    font-family:Arial;
+    margin:0;
+}
+.header {
+    background:#1f3c88;
+    color:white;
+    padding:15px;
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+}
+.box {
+    background:white;
+    width:80%;
+    margin:20px auto;
+    border-radius:10px;
+    overflow:hidden;
+}
+.box-title {
+    background:#c0392b;
+    color:white;
+    padding:10px;
+    text-align:center;
+    font-weight:bold;
+}
+table {
+    width:100%;
+    border-collapse:collapse;
+}
+td {
+    padding:12px;
+    border:1px solid #ddd;
+}
+.btn {
+    display:block;
+    width:250px;
+    margin:30px auto;
+    padding:15px;
+    background:red;
+    color:white;
+    text-align:center;
+    border-radius:30px;
+    font-size:18px;
+    text-decoration:none;
+}
+.section-title {
+    background:#1f3c88;
+    color:white;
+    padding:10px;
+    text-align:center;
+    font-weight:bold;
+    margin-top:30px;
+}
+
+/* ⚽ BOUNCING BALL */
+.ball-container {
+    text-align:center;
+    padding:10px 0 0 0;
+    height:80px;
+    overflow:hidden;
+}
+.ball {
+    font-size:40px;
+    display:inline-block;
+    animation: bounce 0.8s infinite alternate ease-in-out;
+}
+@keyframes bounce {
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(-45px); }
+}
+.ball-shadow {
+    width:40px;
+    height:8px;
+    background:rgba(0,0,0,0.15);
+    border-radius:50%;
+    margin:0 auto;
+    animation: shadow 0.8s infinite alternate ease-in-out;
+}
+@keyframes shadow {
+    0%   { transform: scaleX(1); opacity:0.4; }
+    100% { transform: scaleX(0.5); opacity:0.1; }
+}
+
+/* 🗳️ POLL */
+.poll-box {
+    background:white;
+    width:80%;
+    margin:20px auto;
+    border-radius:10px;
+    overflow:hidden;
+}
+.poll-title {
+    background:#1f3c88;
+    color:white;
+    padding:10px;
+    text-align:center;
+    font-weight:bold;
+}
+.poll-inner {
+    padding:20px;
+    text-align:center;
+}
+.poll-inner p {
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:15px;
+    color:#333;
+}
+.poll-buttons {
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+.poll-btn {
+    padding:12px 25px;
+    border:none;
+    border-radius:25px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:transform 0.2s, box-shadow 0.2s;
+}
+.poll-btn:hover {
+    transform:scale(1.05);
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
+}
+.btn-real   { background:#1f3c88; color:white; }
+.btn-draw   { background:#888;    color:white; }
+.btn-atleti { background:#c0392b; color:white; }
+
+.poll-results { display:none; margin-top:10px; }
+.result-row { margin:10px 0; text-align:left; }
+.result-label { font-size:14px; font-weight:bold; margin-bottom:4px; color:#333; }
+.result-bar-bg { background:#eee; border-radius:20px; overflow:hidden; height:22px; }
+.result-bar {
+    height:22px;
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    padding-left:10px;
+    font-size:13px;
+    color:white;
+    font-weight:bold;
+    transition:width 1s ease;
+}
+.bar-real   { background:#1f3c88; }
+.bar-draw   { background:#888; }
+.bar-atleti { background:#c0392b; }
+.total-votes { color:#888; font-size:13px; margin-top:10px; }
+.voted-msg { color:green; font-weight:bold; margin-top:10px; font-size:15px; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    Real Madrid vs Atletico Madrid
+</div>
+
+<!-- ⚽ BOUNCING BALL -->
+<div class="ball-container">
+    <div class="ball">⚽</div>
+</div>
+<div class="ball-shadow"></div>
+
+<!-- MATCH INFO -->
+<div class="box">
+    <div class="box-title">MATCH INFO</div>
+    <table>
+        <tr><td><b>Match</b></td><td>Real Madrid vs Atletico Madrid</td></tr>
+        <tr><td><b>Competition</b></td><td>Laliga</td></tr>
+        <tr><td><b>Date</b></td><td>23-03-2026</td></tr>
+        <tr><td><b>Time</b></td><td>1:30 AM IST</td></tr>
+        <tr><td><b>Stadium</b></td><td>Estadio Bernabeu</td></tr>
+    </table>
+</div>
+<!-- 💰 NATIVE BANNER AD (Match info-ന് താഴെ) -->
+<div class="ad-box">
+    <script async="async" data-cfasync="false"
+        src="https://pl28958479.profitablecpmratenetwork.com/ffa078e4aeee32e4196149495aafc30b/invoke.js">
+    </script>
+    <div id="container-ffa078e4aeee32e4196149495aafc30b"></div>
+</div>
+
+<!-- CLICK BUTTON -->
+<a href="match2link.html" class="btn">
+    ▶ Click Here to Watch
+</a>
+
+<!-- STATS / TIMER -->
+<div class="box">
+    <div class="section-title">Match Stats And Info</div>
+    <div style="text-align:center; padding:20px;">
+        <h2>Match Starts In ⏱️ <span id="timer">00:00:00</span></h2>
+        <p>Waiting for kickoff...</p>
+    </div>
+</div>
+
+<!-- 🗳️ FAN POLL -->
+<div class="poll-box">
+    <div class="poll-title">🗳️ Fan Poll — Who Will Win?</div>
+    <div class="poll-inner">
+        <p>Cast your vote!</p>
+        <div class="poll-buttons" id="pollButtons">
+            <button class="poll-btn btn-real"   onclick="vote('real')">⚪ Real Madrid</button>
+            <button class="poll-btn btn-draw"   onclick="vote('draw')">🤝 Draw</button>
+            <button class="poll-btn btn-atleti" onclick="vote('atleti')">🔴 Atletico</button>
+        </div>
+        <div class="poll-results" id="pollResults">
+            <div class="result-row">
+                <div class="result-label">⚪ Real Madrid</div>
+                <div class="result-bar-bg">
+                    <div class="result-bar bar-real" id="bar-real" style="width:0%">
+                        <span id="pct-real">0%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="result-row">
+                <div class="result-label">🤝 Draw</div>
+                <div class="result-bar-bg">
+                    <div class="result-bar bar-draw" id="bar-draw" style="width:0%">
+                        <span id="pct-draw">0%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="result-row">
+                <div class="result-label">🔴 Atletico Madrid</div>
+                <div class="result-bar-bg">
+                    <div class="result-bar bar-atleti" id="bar-atleti" style="width:0%">
+                        <span id="pct-atleti">0%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="total-votes" id="totalVotes"></div>
+            <div class="voted-msg">✅ Thanks for voting!</div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Base votes
+let votes = { real: 210, draw: 52, atleti: 168 };
+
+function vote(choice) {
+    votes[choice]++;
+    document.getElementById("pollButtons").style.display = "none";
+    document.getElementById("pollResults").style.display = "block";
+
+    let total = votes.real + votes.draw + votes.atleti;
+    let pcts = {
+        real:   Math.round((votes.real   / total) * 100),
+        draw:   Math.round((votes.draw   / total) * 100),
+        atleti: Math.round((votes.atleti / total) * 100),
+    };
+
+    setTimeout(() => {
+        ["real","draw","atleti"].forEach(k => {
+            document.getElementById("bar-" + k).style.width = pcts[k] + "%";
+            document.getElementById("pct-" + k).innerText   = pcts[k] + "%";
+        });
+        document.getElementById("totalVotes").innerText = "Total votes: " + total;
+    }, 100);
+}
+
+// TIMER
+function updateTimer() {
+    let now = new Date();
+    let matchStart = new Date();
+    matchStart.setHours(1, 30, 0, 0);
+    if (matchStart < now) matchStart.setDate(matchStart.getDate() + 1);
+    let diff = Math.floor((matchStart - now) / 1000);
+    if (diff <= 0) {
+        document.getElementById("timer").innerText = "🔴 LIVE";
+        return;
+    }
+    let hrs  = Math.floor(diff / 3600);
+    let mins = Math.floor((diff % 3600) / 60);
+    let secs = diff % 60;
+    document.getElementById("timer").innerText =
+        String(hrs).padStart(2,'0') + ":" +
+        String(mins).padStart(2,'0') + ":" +
+        String(secs).padStart(2,'0');
+}
+setInterval(updateTimer, 1000);
+updateTimer();
+</script>
+
+</body>
+</html>
+<!-- 💰 ADSTERRA POPUNDER AD -->
+<script src="https://pl28958431.profitablecpmratenetwork.com/dc/38/5c/dc385cf6974a0b633107d49bf1ef3b1e.js"></script>
+
+</body>
+</html>
