@@ -49,7 +49,6 @@
         }
         body.dark-mode .theme-toggle { background: #1f3c88; color: white; }
 
-        /* ANNOUNCEMENT */
         .announcement {
             background: linear-gradient(90deg, #c0392b, #e74c3c, #c0392b);
             background-size: 200% auto;
@@ -66,14 +65,12 @@
             100% { background-position: 200% center; }
         }
 
-        /* NAV */
         header { background: #1f3c88; }
         nav { padding: 8px 15px; }
         nav div { display:flex; gap:15px; justify-content:center; }
         nav a { color:white; text-decoration:none; font-size:13px; font-weight:bold; }
         nav a:hover { color:#ffd700; }
 
-        /* INTRO */
         .intro {
             display: flex;
             justify-content: space-between;
@@ -94,10 +91,8 @@
             font-size: 12px;
         }
 
-        /* CONTAINER */
         .container { max-width: 900px; margin: 0 auto; padding: 10px 15px; }
 
-        /* JOIN BUTTONS */
         .join-telegram {
             display:block; background:#0088cc; color:white;
             padding:8px; text-align:center; border-radius:5px;
@@ -109,7 +104,6 @@
             text-decoration:none; font-weight:bold; font-size:12px; margin-bottom:6px;
         }
 
-        /* SECTION HEADER */
         .section-header {
             display:flex; justify-content:space-between;
             align-items:center; margin:10px 0 6px 0;
@@ -124,7 +118,6 @@
         }
         .day-btns .active { background:red; color:white; }
 
-        /* MATCH CARD */
         .match-card {
             background: rgba(255,255,255,0.08);
             backdrop-filter: blur(10px);
@@ -139,9 +132,7 @@
             transform: scale(1.005);
             box-shadow: 0 0 12px rgba(255,255,255,0.1);
         }
-        .match-teams {
-            display:flex; justify-content:space-between; align-items:center;
-        }
+        .match-teams { display:flex; justify-content:space-between; align-items:center; }
         .team { display:flex; align-items:center; gap:8px; flex:1; }
         .team img {
             width:30px; height:30px; object-fit:contain;
@@ -160,7 +151,6 @@
             border-top:0.5px solid rgba(255,255,255,0.1);
         }
 
-        /* 🔴 LIVE BADGE */
         .live-badge {
             display:inline-block; background:red; color:white;
             font-size:9px; font-weight:bold; padding:2px 7px;
@@ -173,7 +163,6 @@
             100% { box-shadow: 0 0 0 0 rgba(255,0,0,0); }
         }
 
-        /* FOOTER */
         footer { background:#1f3c88; padding:15px; text-align:center; color:white; margin-top:15px; }
         .footer-box { display:flex; flex-direction:column; align-items:center; gap:8px; }
         .footer-box img { max-width:130px; }
@@ -360,9 +349,3 @@ if (localStorage.getItem("theme") === "dark") {
     document.getElementById("themeBtn").innerText = "☀️";
 }
 </script>
-
-<!-- 💰 ADSTERRA POPUNDER AD -->
-<script src="https://pl28958431.profitablecpmratenetwork.com/dc/38/5c/dc385cf6974a0b633107d49bf1ef3b1e.js"></script>
-
-</body>
-</html>
