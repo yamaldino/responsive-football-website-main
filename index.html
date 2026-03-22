@@ -12,7 +12,6 @@
     <style>
         * { margin:0; padding:0; box-sizing:border-box; }
 
-        /* 🌊 GRADIENT WAVE BACKGROUND */
         body {
             background: linear-gradient(270deg, #1a1a2e, #16213e, #0f3460, #1a1a2e);
             background-size: 400% 400%;
@@ -27,7 +26,6 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* DARK MODE */
         body.dark-mode {
             background: linear-gradient(270deg, #000000, #0b1120, #0d1a3a, #000000) !important;
             background-size: 400% 400% !important;
@@ -36,182 +34,160 @@
         body.dark-mode header { background: rgba(0,0,0,0.4) !important; }
         body.dark-mode footer { background: rgba(0,0,0,0.4) !important; }
 
-        /* TOGGLE BUTTON */
         .theme-toggle {
             position: fixed;
-            top: 15px;
-            right: 20px;
+            top: 10px;
+            right: 15px;
             z-index: 9999;
             background: white;
             border: none;
             border-radius: 50px;
-            padding: 8px 16px;
-            font-size: 18px;
+            padding: 5px 12px;
+            font-size: 15px;
             cursor: pointer;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
-        .theme-toggle:hover { transform: scale(1.1); }
         body.dark-mode .theme-toggle { background: #1f3c88; color: white; }
 
-        /* NAV */
-        header {
-            background: #1f3c88;
-            padding: 0;
-        }
-        nav {
-            background: #1f3c88;
-            padding: 15px 20px;
-        }
-        nav div {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: bold;
-        }
-        nav a:hover { color: #ffd700; }
-
-        /* INTRO SECTION */
-        .intro {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 40px 60px;
-            background: #1f3c88;
-        }
-        .left-side {
-            flex: 1;
-        }
-        .Section-title {
-            font-size: 42px;
-            font-weight: bold;
-            color: white;
-            margin-bottom: 20px;
-        }
-        .right-side {
-            flex: 1;
-            text-align: right;
-        }
-        .right-side img {
-            max-width: 100%;
-            max-height: 300px;
-            border-radius: 10px;
-        }
-        .link-button {
-            display: inline-block;
-            background: #e91e63;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 16px;
-            transition: background 0.3s ease;
-        }
-        .link-button:hover { background: #c2185b; }
-
-        /* CONTAINER */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* 🔴 LIVE BADGE */
-        .live-badge {
-            display: inline-block;
-            background: red;
-            color: white;
-            font-size: 11px;
-            font-weight: bold;
-            padding: 3px 10px;
-            border-radius: 20px;
-            margin-left: 8px;
-            vertical-align: middle;
-            animation: pulse 1.2s infinite;
-        }
-        @keyframes pulse {
-            0%   { box-shadow: 0 0 0 0 rgba(255,0,0,0.7); }
-            70%  { box-shadow: 0 0 0 8px rgba(255,0,0,0); }
-            100% { box-shadow: 0 0 0 0 rgba(255,0,0,0); }
-        }
-
-        /* MATCH CARD */
-        .match-card {
-            background: rgba(255,255,255,0.08);
-            backdrop-filter: blur(10px);
-            color: white;
-            padding: 25px;
-            margin-bottom: 15px;
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .match-card:hover {
-            transform: scale(1.01);
-            box-shadow: 0 0 25px rgba(255,255,255,0.15);
-        }
-
-        /* 📢 ANNOUNCEMENT BANNER */
+        /* ANNOUNCEMENT */
         .announcement {
             background: linear-gradient(90deg, #c0392b, #e74c3c, #c0392b);
             background-size: 200% auto;
             animation: slidebg 3s linear infinite;
             color: white;
             text-align: center;
-            padding: 10px;
+            padding: 6px;
             font-weight: bold;
-            font-size: 14px;
-            letter-spacing: 1px;
+            font-size: 12px;
+            letter-spacing: 0.5px;
         }
         @keyframes slidebg {
             0%   { background-position: 0% center; }
             100% { background-position: 200% center; }
         }
 
-        h2 { color: white; }
+        /* NAV */
+        header { background: #1f3c88; }
+        nav { padding: 8px 15px; }
+        nav div { display:flex; gap:15px; justify-content:center; }
+        nav a { color:white; text-decoration:none; font-size:13px; font-weight:bold; }
+        nav a:hover { color:#ffd700; }
+
+        /* INTRO */
+        .intro {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: #1f3c88;
+        }
+        .Section-title { font-size: 24px; font-weight:bold; color:white; margin-bottom:10px; }
+        .right-side img { max-height: 120px; border-radius:8px; }
+        .link-button {
+            display: inline-block;
+            background: #e91e63;
+            color: white;
+            padding: 7px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        /* CONTAINER */
+        .container { max-width: 900px; margin: 0 auto; padding: 10px 15px; }
+
+        /* JOIN BUTTONS */
+        .join-telegram {
+            display:block; background:#0088cc; color:white;
+            padding:8px; text-align:center; border-radius:5px;
+            text-decoration:none; font-weight:bold; font-size:12px; margin-bottom:6px;
+        }
+        .join-whatsapp {
+            display:block; background:#28a745; color:white;
+            padding:8px; text-align:center; border-radius:5px;
+            text-decoration:none; font-weight:bold; font-size:12px; margin-bottom:6px;
+        }
+
+        /* SECTION HEADER */
+        .section-header {
+            display:flex; justify-content:space-between;
+            align-items:center; margin:10px 0 6px 0;
+        }
+        .section-header h2 {
+            background:#1f3c88; color:white;
+            padding:5px 12px; border-radius:5px; font-size:13px;
+        }
+        .day-btns button {
+            padding:4px 10px; border:none; border-radius:4px;
+            cursor:pointer; font-size:11px; background:#ddd; margin-left:4px;
+        }
+        .day-btns .active { background:red; color:white; }
+
+        /* MATCH CARD */
+        .match-card {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 10px 15px;
+            margin-bottom: 6px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .match-card:hover {
+            transform: scale(1.005);
+            box-shadow: 0 0 12px rgba(255,255,255,0.1);
+        }
+        .match-teams {
+            display:flex; justify-content:space-between; align-items:center;
+        }
+        .team { display:flex; align-items:center; gap:8px; flex:1; }
+        .team img {
+            width:30px; height:30px; object-fit:contain;
+            background:white; padding:3px; border-radius:50%;
+        }
+        .team h3 { font-size:13px; font-weight:600; }
+        .team-right { justify-content:flex-end; }
+        .match-center { text-align:center; flex: 0 0 110px; }
+        .match-center p { font-size:11px; margin-bottom:2px; }
+        .match-center h3 { font-size:12px; margin:2px 0; }
+        .match-center img { width:26px; margin-top:2px; cursor:pointer; }
+        .match-info {
+            display:flex; justify-content:space-between;
+            font-size:10px; color:#aaa;
+            margin-top:6px; padding-top:6px;
+            border-top:0.5px solid rgba(255,255,255,0.1);
+        }
+
+        /* 🔴 LIVE BADGE */
+        .live-badge {
+            display:inline-block; background:red; color:white;
+            font-size:9px; font-weight:bold; padding:2px 7px;
+            border-radius:20px; margin-left:4px; vertical-align:middle;
+            animation: pulse 1.2s infinite;
+        }
+        @keyframes pulse {
+            0%   { box-shadow: 0 0 0 0 rgba(255,0,0,0.7); }
+            70%  { box-shadow: 0 0 0 5px rgba(255,0,0,0); }
+            100% { box-shadow: 0 0 0 0 rgba(255,0,0,0); }
+        }
 
         /* FOOTER */
-        footer {
-            background: #1f3c88;
-            padding: 30px 20px;
-            text-align: center;
-            color: white;
-            margin-top: 40px;
-        }
-        .footer-box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-        }
-        .footer-box img {
-            max-width: 200px;
-        }
-        .social-icon {
-            display: flex;
-            gap: 20px;
-            font-size: 24px;
-        }
-        .social-icon i {
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-        .social-icon i:hover { color: #ffd700; }
+        footer { background:#1f3c88; padding:15px; text-align:center; color:white; margin-top:15px; }
+        .footer-box { display:flex; flex-direction:column; align-items:center; gap:8px; }
+        .footer-box img { max-width:130px; }
+        .social-icon { display:flex; gap:12px; font-size:18px; }
+        .social-icon i { cursor:pointer; }
+        .social-icon i:hover { color:#ffd700; }
+        footer p { font-size:11px; color:#ccc; }
     </style>
 </head>
 
 <body>
 
-<!-- 🌙 DARK/LIGHT TOGGLE -->
 <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">🌙</button>
 
-<!-- 📢 ANNOUNCEMENT BANNER -->
 <div class="announcement">
     🔴 LIVE — FC Barcelona vs Rayo Vallecano &nbsp;|&nbsp; Tottenham vs Nottingham Forest &nbsp;|&nbsp; Real Madrid vs Atletico Tonight 1:30 AM IST 🔴
 </div>
@@ -225,7 +201,6 @@
             <a href="#">Contact</a>
         </div>
     </nav>
-
     <div class="intro">
         <div class="left-side">
             <h1 class="Section-title">GOAT TV LIVE</h1>
@@ -241,29 +216,21 @@
 
 <main>
 
-    <!-- JOIN BUTTONS -->
     <section class="container">
-        <div style="margin:20px 0;">
-            <a href="https://t.me/keralablasterlink" target="_blank" class="link-button" style="display:block; margin-bottom:10px;">
-                JOIN US ON TELEGRAM
-            </a>
-            <a href="https://t.me/keralablasterlink" target="_blank" class="link-button" style="display:block; margin-bottom:10px; background:#28a745;">
-                JOIN WHATSAPP GROUP 1
-            </a>
-            <a href="https://t.me/keralablasterlink" target="_blank" class="link-button" style="display:block; background:#28a745;">
-                JOIN WHATSAPP GROUP 2
-            </a>
+        <div style="margin:8px 0;">
+            <a href="https://t.me/keralablasterlink" target="_blank" class="join-telegram">JOIN US ON TELEGRAM</a>
+            <a href="https://t.me/keralablasterlink" target="_blank" class="join-whatsapp">JOIN WHATSAPP GROUP 1</a>
+            <a href="https://t.me/keralablasterlink" target="_blank" class="join-whatsapp">JOIN WHATSAPP GROUP 2</a>
         </div>
     </section>
 
-    <!-- TODAY MATCHES -->
     <section class="container">
 
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+        <div class="section-header">
             <h2>Today's Matches</h2>
-            <div>
+            <div class="day-btns">
                 <button>Yesterday</button>
-                <button style="background:red; color:white;">Today</button>
+                <button class="active">Today</button>
                 <button>Tomorrow</button>
             </div>
         </div>
@@ -271,26 +238,23 @@
         <!-- MATCH 1 -->
         <a href="match1.html" style="text-decoration:none; color:inherit;">
             <div class="match-card">
-                <div style="display:flex; justify-content:space-between; align-items:center;">
-                    <div style="display:flex; align-items:center; gap:10px;">
-                        <img src="images/team_images/barca.png"
-                             style="width:40px; height:40px; object-fit:contain; background:white; padding:5px; border-radius:50%; box-shadow:0 0 8px rgba(255,255,255,0.3);">
-                        <h3 style="font-weight:600;">FC Barcelona</h3>
+                <div class="match-teams">
+                    <div class="team">
+                        <img src="images/team_images/barca.png">
+                        <h3>FC Barcelona</h3>
                     </div>
-                    <div style="text-align:center;">
-                        <p style="margin:0;">6:00 PM <span class="live-badge">🔴 LIVE</span></p>
-                        <h3 style="margin:5px 0;">VS</h3>
-                        <img src="images/playbutton.jpg" style="width:35px; margin-top:5px; cursor:pointer;">
+                    <div class="match-center">
+                        <p>6:00 PM <span class="live-badge">🔴 LIVE</span></p>
+                        <h3>VS</h3>
+                        <img src="images/playbutton.jpg">
                     </div>
-                    <div style="display:flex; align-items:center; gap:10px;">
-                        <h3 style="font-weight:600;">Rayo Vallecano</h3>
-                        <img src="images/team_images/rayo.png"
-                             style="width:40px; height:40px; object-fit:contain; background:white; padding:5px; border-radius:50%; box-shadow:0 0 8px rgba(255,255,255,0.3);">
+                    <div class="team team-right">
+                        <h3>Rayo Vallecano</h3>
+                        <img src="images/team_images/rayo.png">
                     </div>
                 </div>
-                <hr style="border:0.5px solid rgba(255,255,255,0.2); margin:15px 0;">
-                <div style="display:flex; justify-content:space-between; font-size:14px;">
-                    <p>Laliga</p><p>Lamine Akku</p><p>beIN SPORTS 1</p>
+                <div class="match-info">
+                    <span>Laliga</span><span>Lamine Akku</span><span>beIN SPORTS 1</span>
                 </div>
             </div>
         </a>
@@ -298,26 +262,23 @@
         <!-- MATCH 2 -->
         <a href="match2.html" style="text-decoration:none; color:inherit;">
             <div class="match-card">
-                <div style="display:flex; justify-content:space-between; align-items:center;">
-                    <div style="display:flex; align-items:center; gap:10px;">
-                        <img src="images/team_images/realmadrid.png"
-                             style="width:40px; height:40px; object-fit:contain; background:white; padding:5px; border-radius:50%; box-shadow:0 0 8px rgba(255,255,255,0.3);">
+                <div class="match-teams">
+                    <div class="team">
+                        <img src="images/team_images/realmadrid.png">
                         <h3>Real Madrid</h3>
                     </div>
-                    <div style="text-align:center;">
+                    <div class="match-center">
                         <p>1:30 AM <span class="live-badge">🔴 LIVE</span></p>
                         <h3>VS</h3>
-                        <img src="images/playbutton.jpg" style="width:35px; margin-top:5px;">
+                        <img src="images/playbutton.jpg">
                     </div>
-                    <div style="display:flex; align-items:center; gap:10px;">
+                    <div class="team team-right">
                         <h3>Atletico Madrid</h3>
-                        <img src="images/team_images/atheticomadrid.png"
-                             style="width:40px; height:40px; object-fit:contain; background:white; padding:5px; border-radius:50%; box-shadow:0 0 8px rgba(255,255,255,0.3);">
+                        <img src="images/team_images/atheticomadrid.png">
                     </div>
                 </div>
-                <hr style="border:0.5px solid rgba(255,255,255,0.2); margin:15px 0;">
-                <div style="display:flex; justify-content:space-between; font-size:14px;">
-                    <p>Laliga</p><p>Lamine Akku</p><p>beIN SPORTS 1</p>
+                <div class="match-info">
+                    <span>Laliga</span><span>Lamine Akku</span><span>beIN SPORTS 1</span>
                 </div>
             </div>
         </a>
@@ -325,26 +286,23 @@
         <!-- MATCH 3 -->
         <a href="match3.html" style="text-decoration:none; color:inherit;">
             <div class="match-card">
-                <div style="display:flex; justify-content:space-between; align-items:center;">
-                    <div style="display:flex; align-items:center; gap:10px;">
-                        <img src="images/team_images/tottenham.png"
-                             style="width:40px; height:40px; object-fit:contain; background:white; padding:5px; border-radius:50%; box-shadow:0 0 8px rgba(255,255,255,0.3);">
-                        <h3 style="font-weight:600;">Tottenham</h3>
+                <div class="match-teams">
+                    <div class="team">
+                        <img src="images/team_images/tottenham.png">
+                        <h3>Tottenham</h3>
                     </div>
-                    <div style="text-align:center;">
-                        <p style="margin:0;">7:45 PM <span class="live-badge">🔴 LIVE</span></p>
-                        <h3 style="margin:5px 0;">VS</h3>
-                        <img src="images/playbutton.jpg" style="width:35px; margin-top:5px; cursor:pointer;">
+                    <div class="match-center">
+                        <p>7:45 PM <span class="live-badge">🔴 LIVE</span></p>
+                        <h3>VS</h3>
+                        <img src="images/playbutton.jpg">
                     </div>
-                    <div style="display:flex; align-items:center; gap:10px;">
-                        <h3 style="font-weight:600;">Nottingham Forest</h3>
-                        <img src="images/team_images/NottinghamForest.png"
-                             style="width:40px; height:40px; object-fit:contain; background:white; padding:5px; border-radius:50%; box-shadow:0 0 8px rgba(255,255,255,0.3);">
+                    <div class="team team-right">
+                        <h3>Nottingham Forest</h3>
+                        <img src="images/team_images/NottinghamForest.png">
                     </div>
                 </div>
-                <hr style="border:0.5px solid rgba(255,255,255,0.2); margin:15px 0;">
-                <div style="display:flex; justify-content:space-between; font-size:14px;">
-                    <p>Premier League</p><p>Lamine Akku</p><p>beIN SPORTS 1</p>
+                <div class="match-info">
+                    <span>Premier League</span><span>Lamine Akku</span><span>beIN SPORTS 1</span>
                 </div>
             </div>
         </a>
@@ -352,26 +310,23 @@
         <!-- MATCH 4 -->
         <a href="match4.html" style="text-decoration:none; color:inherit;">
             <div class="match-card">
-                <div style="display:flex; justify-content:space-between; align-items:center;">
-                    <div style="display:flex; align-items:center; gap:10px;">
-                        <img src="images/team_images/Man City.png"
-                             style="width:40px; height:40px; object-fit:contain; background:white; padding:5px; border-radius:50%; box-shadow:0 0 8px rgba(255,255,255,0.3);">
-                        <h3 style="font-weight:600;">Man City</h3>
+                <div class="match-teams">
+                    <div class="team">
+                        <img src="images/team_images/Man City.png">
+                        <h3>Man City</h3>
                     </div>
-                    <div style="text-align:center;">
-                        <p style="margin:0;">7:45 PM <span class="live-badge">🔴 LIVE</span></p>
-                        <h3 style="margin:5px 0;">VS</h3>
-                        <img src="images/playbutton.jpg" style="width:35px; margin-top:5px; cursor:pointer;">
+                    <div class="match-center">
+                        <p>7:45 PM <span class="live-badge">🔴 LIVE</span></p>
+                        <h3>VS</h3>
+                        <img src="images/playbutton.jpg">
                     </div>
-                    <div style="display:flex; align-items:center; gap:10px;">
-                        <h3 style="font-weight:600;">Arsenal</h3>
-                        <img src="images/team_images/Arsenal.png"
-                             style="width:40px; height:40px; object-fit:contain; background:white; padding:5px; border-radius:50%; box-shadow:0 0 8px rgba(255,255,255,0.3);">
+                    <div class="team team-right">
+                        <h3>Arsenal</h3>
+                        <img src="images/team_images/Arsenal.png">
                     </div>
                 </div>
-                <hr style="border:0.5px solid rgba(255,255,255,0.2); margin:15px 0;">
-                <div style="display:flex; justify-content:space-between; font-size:14px;">
-                    <p>Premier League</p><p>Lamine Akku</p><p>beIN SPORTS 1</p>
+                <div class="match-info">
+                    <span>Premier League</span><span>Lamine Akku</span><span>beIN SPORTS 1</span>
                 </div>
             </div>
         </a>
@@ -406,5 +361,8 @@ if (localStorage.getItem("theme") === "dark") {
 }
 </script>
 
+<!-- 💰 ADSTERRA POPUNDER AD -->
+<script src="https://pl28958431.profitablecpmratenetwork.com/dc/38/5c/dc385cf6974a0b633107d49bf1ef3b1e.js"></script>
 
+</body>
 </html>
