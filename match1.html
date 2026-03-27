@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>FC Barcelona vs Rayo Vallecano</title>
+<title>Royal Challengers Bengaluru vs sunrisers hyderabad</title>
 
 <style>
 body {
@@ -131,9 +131,9 @@ td {
     transform:scale(1.05);
     box-shadow:0 4px 12px rgba(0,0,0,0.2);
 }
-.btn-barca { background:#a50044; color:white; }
+.btn-rcb { background:#a50044; color:white; }
 .btn-draw  { background:#888;    color:white; }
-.btn-rayo  { background:#cc0000; color:white; }
+.btn-srh  { background:#cc0000; color:white; }
 .poll-results { display:none; margin-top:10px; }
 .result-row { margin:10px 0; text-align:left; }
 .result-label { font-size:14px; font-weight:bold; margin-bottom:4px; color:#333; }
@@ -149,9 +149,9 @@ td {
     font-weight:bold;
     transition:width 1s ease;
 }
-.bar-barca { background:#a50044; }
+.bar-rcb { background:#a50044; }
 .bar-draw  { background:#888; }
-.bar-rayo  { background:#cc0000; }
+.bar-srh  { background:#cc0000; }
 .total-votes { color:#888; font-size:13px; margin-top:10px; }
 .voted-msg { color:green; font-weight:bold; margin-top:10px; font-size:15px; }
 
@@ -165,7 +165,7 @@ td {
 <body>
 
 <div class="header">
-    FC Barcelona vs Rayo Vallecano
+    Royal Challengers Bengaluru vs sunrisers hyderabad
 </div>
 
 <div class="ball-container">
@@ -176,21 +176,15 @@ td {
 <div class="box">
     <div class="box-title">MATCH INFO</div>
     <table>
-        <tr><td><b>Match</b></td><td>FC Barcelona vs Rayo Vallecano</td></tr>
-        <tr><td><b>Competition</b></td><td>Laliga</td></tr>
+        <tr><td><b>Match</b></td><td>Royal Challengers Bengaluru vs sunrisers hyderabad</td></tr>
+        <tr><td><b>Competition</b></td><td>IPL</td></tr>
         <tr><td><b>Date</b></td><td>22-03-2026</td></tr>
         <tr><td><b>Time</b></td><td>6:00 PM IST</td></tr>
         <tr><td><b>Stadium</b></td><td>Camp Nou</td></tr>
     </table>
 </div>
 
-<!-- 💰 NATIVE BANNER AD (Match info-ന് താഴെ) -->
-<div class="ad-box">
-    <script async="async" data-cfasync="false"
-        src="https://pl28958479.profitablecpmratenetwork.com/ffa078e4aeee32e4196149495aafc30b/invoke.js">
-    </script>
-    <div id="container-ffa078e4aeee32e4196149495aafc30b"></div>
-</div>
+
 
 <a href="match1link.html" class="btn">
     ▶ Click Here to Watch
@@ -209,16 +203,16 @@ td {
     <div class="poll-inner">
         <p>Cast your vote!</p>
         <div class="poll-buttons" id="pollButtons">
-            <button class="poll-btn btn-barca" onclick="vote('barca')">🔵🔴 Barcelona</button>
+            <button class="poll-btn btn-rcb" onclick="vote('rcb')">🔵🔴 Barcelona</button>
             <button class="poll-btn btn-draw"  onclick="vote('draw')">🤝 Draw</button>
-            <button class="poll-btn btn-rayo"  onclick="vote('rayo')">⚪🔴 Rayo</button>
+            <button class="poll-btn btn-srh"  onclick="vote('srh')">⚪🔴 srh</button>
         </div>
         <div class="poll-results" id="pollResults">
             <div class="result-row">
-                <div class="result-label">🔵🔴 FC Barcelona</div>
+                <div class="result-label">🔵🔴 Royal Challengers Bengaluru</div>
                 <div class="result-bar-bg">
-                    <div class="result-bar bar-barca" id="bar-barca" style="width:0%">
-                        <span id="pct-barca">0%</span>
+                    <div class="result-bar bar-rcb" id="bar-rcb" style="width:0%">
+                        <span id="pct-rcb">0%</span>
                     </div>
                 </div>
             </div>
@@ -231,10 +225,10 @@ td {
                 </div>
             </div>
             <div class="result-row">
-                <div class="result-label">⚪🔴 Rayo Vallecano</div>
+                <div class="result-label">⚪🔴 sunrisers hyderabad</div>
                 <div class="result-bar-bg">
-                    <div class="result-bar bar-rayo" id="bar-rayo" style="width:0%">
-                        <span id="pct-rayo">0%</span>
+                    <div class="result-bar bar-srh" id="bar-srh" style="width:0%">
+                        <span id="pct-srh">0%</span>
                     </div>
                 </div>
             </div>
@@ -245,22 +239,22 @@ td {
 </div>
 
 <script>
-let votes = { barca: 245, draw: 41, rayo: 89 };
+let votes = { rcb: 245, draw: 41, srh: 89 };
 
 function vote(choice) {
     votes[choice]++;
     document.getElementById("pollButtons").style.display = "none";
     document.getElementById("pollResults").style.display = "block";
 
-    let total = votes.barca + votes.draw + votes.rayo;
+    let total = votes.rcb + votes.draw + votes.srh;
     let pcts = {
-        barca: Math.round((votes.barca / total) * 100),
+        rcb: Math.round((votes.rcb / total) * 100),
         draw:  Math.round((votes.draw  / total) * 100),
-        rayo:  Math.round((votes.rayo  / total) * 100),
+        srh:  Math.round((votes.srh  / total) * 100),
     };
 
     setTimeout(() => {
-        ["barca","draw","rayo"].forEach(k => {
+        ["rcb","draw","srh"].forEach(k => {
             document.getElementById("bar-" + k).style.width = pcts[k] + "%";
             document.getElementById("pct-" + k).innerText   = pcts[k] + "%";
         });
@@ -271,7 +265,7 @@ function vote(choice) {
 function updateTimer() {
     let now = new Date();
     let matchStart = new Date();
-    matchStart.setHours(18, 0, 0, 0);
+    matchStart.setHours(19, 30, 0, 0);
     if (matchStart < now) matchStart.setDate(matchStart.getDate() + 1);
     let diff = Math.floor((matchStart - now) / 1000);
     if (diff <= 0) {
@@ -290,8 +284,3 @@ setInterval(updateTimer, 1000);
 updateTimer();
 </script>
 
-<!-- 💰 ADSTERRA POPUNDER AD -->
-<script src="https://pl28958431.profitablecpmratenetwork.com/dc/38/5c/dc385cf6974a0b633107d49bf1ef3b1e.js"></script>
-
-</body>
-</html>
