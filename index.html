@@ -8,37 +8,39 @@
     <title>GOAT TV LIVE</title>
 
     <script src="https://kit.fontawesome.com/d512ac8ac1.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
         * { margin:0; padding:0; box-sizing:border-box; }
 
         body {
-            background: linear-gradient(270deg, #1a1a2e, #16213e, #0f3460, #1a1a2e);
-            background-size: 400% 400%;
-            animation: waveGradient 10s ease infinite;
+            background: #f0f2f5;
             min-height: 100vh;
-            font-family: Arial, sans-serif;
-            color: white;
-            padding-bottom: 60px; /* bottom nav space */
-        }
-        @keyframes waveGradient {
-            0%   { background-position: 0% 50%; }
-            50%  { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            font-family: 'Poppins', Arial, sans-serif;
+            color: #1a1a2e;
+            padding-bottom: 70px;
         }
 
         body.dark-mode {
-            background: linear-gradient(270deg, #000000, #0b1120, #0d1a3a, #000000) !important;
-            background-size: 400% 400% !important;
-            animation: waveGradient 10s ease infinite !important;
+            background: #0d1117 !important;
+            color: white !important;
         }
-        body.dark-mode header { background: rgba(0,0,0,0.4) !important; }
-        body.dark-mode footer { background: rgba(0,0,0,0.4) !important; }
-        body.dark-mode .bottom-nav { background: #0d1a3a !important; }
+        body.dark-mode header { background: #161b22 !important; }
+        body.dark-mode .match-card { background: #1c2128 !important; border-color: #30363d !important; }
+        body.dark-mode .match-card:hover { background: #222b38 !important; }
+        body.dark-mode .team h3 { color: #e6edf3 !important; }
+        body.dark-mode .match-info { color: #8b949e !important; border-color: #30363d !important; }
+        body.dark-mode .match-info span { color: #8b949e !important; }
+        body.dark-mode .section-wrapper { background: #161b22 !important; }
+        body.dark-mode .bottom-nav { background: #161b22 !important; border-color: #30363d !important; }
+        body.dark-mode footer { background: #161b22 !important; color: #e6edf3 !important; }
+        body.dark-mode .day-btns button { background: #21262d !important; color: #8b949e !important; }
+        body.dark-mode .day-btns .active { background: #e74c3c !important; color: white !important; }
+        body.dark-mode .section-title-badge { background: #1f6feb !important; }
 
         .theme-toggle {
             position: fixed;
-            top: 10px;
+            top: 12px;
             right: 15px;
             z-index: 9999;
             background: white;
@@ -47,116 +49,186 @@
             padding: 5px 12px;
             font-size: 15px;
             cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
-        body.dark-mode .theme-toggle { background: #1f3c88; color: white; }
+        body.dark-mode .theme-toggle { background: #21262d; color: white; }
 
+        /* ANNOUNCEMENT */
         .announcement {
             background: linear-gradient(90deg, #c0392b, #e74c3c, #c0392b);
             background-size: 200% auto;
             animation: slidebg 3s linear infinite;
             color: white;
             text-align: center;
-            padding: 6px;
-            font-weight: bold;
+            padding: 7px;
+            font-weight: 600;
             font-size: 12px;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+            overflow: hidden;
         }
         @keyframes slidebg {
             0%   { background-position: 0% center; }
             100% { background-position: 200% center; }
         }
 
-        header { background: #1f3c88; }
-        nav { padding: 8px 15px; }
-        nav div { display:flex; gap:15px; justify-content:center; }
-        nav a { color:white; text-decoration:none; font-size:13px; font-weight:bold; }
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #1f3c88 0%, #0d2461 100%);
+            padding-bottom: 0;
+        }
+        nav { padding: 10px 15px 8px; }
+        nav div { display:flex; gap:20px; justify-content:center; }
+        nav a { color:rgba(255,255,255,0.85); text-decoration:none; font-size:13px; font-weight:600; letter-spacing:0.3px; }
         nav a:hover { color:#ffd700; }
 
         .intro {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 30px;
-            background: #1f3c88;
+            padding: 12px 20px 16px;
         }
-        .Section-title { font-size: 24px; font-weight:bold; color:white; margin-bottom:10px; }
-        .right-side img { max-height: 120px; border-radius:8px; }
+        .Section-title { font-size: 22px; font-weight:700; color:white; margin-bottom:8px; letter-spacing:0.5px; }
+        .right-side img { max-height: 110px; border-radius:8px; }
         .link-button {
             display: inline-block;
             background: #e91e63;
             color: white;
-            padding: 7px 15px;
+            padding: 7px 16px;
             border-radius: 20px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 700;
             font-size: 12px;
+            box-shadow: 0 4px 12px rgba(233,30,99,0.4);
         }
 
-        .container { max-width: 900px; margin: 0 auto; padding: 10px 15px; }
+        /* MAIN CONTAINER */
+        .container { max-width: 860px; margin: 0 auto; padding: 10px 12px; }
 
+        /* JOIN BUTTONS */
         .join-telegram {
             display:block; background:#0088cc; color:white;
-            padding:8px; text-align:center; border-radius:5px;
-            text-decoration:none; font-weight:bold; font-size:12px; margin-bottom:6px;
+            padding:10px; text-align:center; border-radius:8px;
+            text-decoration:none; font-weight:700; font-size:13px; margin-bottom:7px;
+            box-shadow: 0 3px 10px rgba(0,136,204,0.3);
         }
         .join-whatsapp {
-            display:block; background:#28a745; color:white;
-            padding:8px; text-align:center; border-radius:5px;
-            text-decoration:none; font-weight:bold; font-size:12px; margin-bottom:6px;
+            display:block; background:#25d366; color:white;
+            padding:10px; text-align:center; border-radius:8px;
+            text-decoration:none; font-weight:700; font-size:13px; margin-bottom:7px;
+            box-shadow: 0 3px 10px rgba(37,211,102,0.3);
         }
 
+        /* SECTION HEADER */
         .section-header {
             display:flex; justify-content:space-between;
-            align-items:center; margin:10px 0 6px 0;
+            align-items:center; margin:14px 0 10px 0;
         }
-        .section-header h2 {
+        .section-title-badge {
             background:#1f3c88; color:white;
-            padding:5px 12px; border-radius:5px; font-size:13px;
+            padding:6px 14px; border-radius:6px; font-size:13px; font-weight:700;
         }
+        .day-btns { display:flex; gap:5px; }
         .day-btns button {
-            padding:4px 10px; border:none; border-radius:4px;
-            cursor:pointer; font-size:11px; background:#ddd; margin-left:4px;
+            padding:5px 12px; border:none; border-radius:6px;
+            cursor:pointer; font-size:11px; font-weight:600;
+            background:#e0e0e0; color:#555;
+            transition: all 0.2s;
         }
-        .day-btns .active { background:red; color:white; }
+        .day-btns button:hover { background:#bbb; }
+        .day-btns .active { background:#e74c3c; color:white; box-shadow: 0 2px 8px rgba(231,76,60,0.4); }
 
+        /* MATCH CARD — koora style */
         .match-card {
-            background: rgba(255,255,255,0.08);
-            backdrop-filter: blur(10px);
-            color: white;
-            padding: 10px 15px;
-            margin-bottom: 6px;
-            border-radius: 8px;
-            border: 1px solid rgba(255,255,255,0.08);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            background: white;
+            color: #1a1a2e;
+            padding: 14px 16px 10px;
+            margin-bottom: 8px;
+            border-radius: 12px;
+            border: 1px solid #e8eaf0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
         }
         .match-card:hover {
-            transform: scale(1.005);
-            box-shadow: 0 0 12px rgba(255,255,255,0.1);
-        }
-        .match-teams { display:flex; justify-content:space-between; align-items:center; }
-        .team { display:flex; align-items:center; gap:8px; flex:1; }
-        .team img {
-            width:30px; height:30px; object-fit:contain;
-            background:white; padding:3px; border-radius:50%;
-        }
-        .team h3 { font-size:13px; font-weight:600; }
-        .team-right { justify-content:flex-end; }
-        .match-center { text-align:center; flex: 0 0 110px; }
-        .match-center p { font-size:11px; margin-bottom:2px; }
-        .match-center h3 { font-size:12px; margin:2px 0; }
-        .match-center img { width:26px; margin-top:2px; cursor:pointer; }
-        .match-info {
-            display:flex; justify-content:space-between;
-            font-size:10px; color:#aaa;
-            margin-top:6px; padding-top:6px;
-            border-top:0.5px solid rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
         }
 
+        .match-teams {
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        /* TEAM */
+        .team { display:flex; align-items:center; gap:10px; flex:1; }
+        .team img {
+            width: 44px;
+            height: 44px;
+            object-fit: contain;
+            background: white;
+            padding: 4px;
+            border-radius: 50%;
+            border: 2px solid #e8eaf0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        .team h3 {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1a1a2e;
+            line-height: 1.2;
+        }
+        .team-right { justify-content:flex-end; text-align:right; }
+        .team-right h3 { text-align:right; }
+
+        /* CENTER */
+        .match-center {
+            text-align:center;
+            flex: 0 0 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+        }
+        .match-center p {
+            font-size: 12px;
+            font-weight: 600;
+            color: #444;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .match-center .vs-score {
+            font-size: 20px;
+            font-weight: 800;
+            color: #1a1a2e;
+            letter-spacing: 2px;
+            line-height: 1;
+        }
+        .match-center img {
+            width: 30px;
+            height: 30px;
+            cursor:pointer;
+            border-radius: 50%;
+        }
+
+        /* MATCH INFO ROW */
+        .match-info {
+            display:flex; justify-content:space-between;
+            font-size:11px; color:#888;
+            margin-top:10px; padding-top:8px;
+            border-top:1px solid #f0f0f0;
+            font-weight: 500;
+        }
+
+        /* LIVE BADGE */
         .live-badge {
-            display:inline-block; background:red; color:white;
-            font-size:9px; font-weight:bold; padding:2px 7px;
-            border-radius:20px; margin-left:4px; vertical-align:middle;
+            display:inline-flex; align-items:center; gap:3px;
+            background:red; color:white;
+            font-size:9px; font-weight:700; padding:2px 7px;
+            border-radius:20px;
             animation: pulse 1.2s infinite;
         }
         @keyframes pulse {
@@ -165,55 +237,59 @@
             100% { box-shadow: 0 0 0 0 rgba(255,0,0,0); }
         }
 
-        footer { background:#1f3c88; padding:15px; text-align:center; color:white; margin-top:15px; }
-        .footer-box { display:flex; flex-direction:column; align-items:center; gap:8px; }
-        .footer-box img { max-width:130px; }
-        .social-icon { display:flex; gap:12px; font-size:18px; }
-        .social-icon i { cursor:pointer; }
+        /* FOOTER */
+        footer { background:#1f3c88; padding:18px; text-align:center; color:white; margin-top:15px; }
+        .footer-box { display:flex; flex-direction:column; align-items:center; gap:10px; }
+        .footer-box img { max-width:130px; border-radius:6px; }
+        .social-icon { display:flex; gap:16px; font-size:20px; }
+        .social-icon i { cursor:pointer; transition: color 0.2s; }
         .social-icon i:hover { color:#ffd700; }
-        footer p { font-size:11px; color:#ccc; }
+        footer p { font-size:11px; color:#bbb; }
 
-        /* 📱 MOBILE BOTTOM NAV */
+        /* BOTTOM NAV */
         .bottom-nav {
             position: fixed;
-            bottom: 0;
-            left: 0;
+            bottom: 0; left: 0;
             width: 100%;
-            background: #1f3c88;
+            background: white;
             display: flex;
             justify-content: space-around;
             align-items: center;
-            padding: 8px 0;
+            padding: 8px 0 10px;
             z-index: 9998;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.4);
-            border-top: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 -2px 12px rgba(0,0,0,0.1);
+            border-top: 1px solid #eee;
         }
         .bottom-nav a {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: rgba(255,255,255,0.6);
-            text-decoration: none;
-            font-size: 10px;
-            gap: 3px;
-            transition: color 0.2s ease;
+            display: flex; flex-direction: column;
+            align-items: center; color: #aaa;
+            text-decoration: none; font-size: 10px; gap: 3px;
+            font-weight: 600; transition: color 0.2s;
         }
         .bottom-nav a i { font-size: 18px; }
-        .bottom-nav a.active { color: #e91e63; }
-        .bottom-nav a:hover { color: white; }
+        .bottom-nav a.active { color: #1f3c88; }
+        .bottom-nav a:hover { color: #1f3c88; }
         .bottom-nav a.live-nav {
             color: white;
             background: #e91e63;
-            padding: 6px 14px;
-            border-radius: 20px;
-            margin-top: -15px;
-            box-shadow: 0 0 12px rgba(233,30,99,0.6);
+            padding: 7px 16px;
+            border-radius: 22px;
+            margin-top: -18px;
+            box-shadow: 0 0 14px rgba(233,30,99,0.5);
             animation: pulse-nav 1.5s infinite;
         }
         @keyframes pulse-nav {
             0%   { box-shadow: 0 0 0 0 rgba(233,30,99,0.6); }
             70%  { box-shadow: 0 0 0 8px rgba(233,30,99,0); }
             100% { box-shadow: 0 0 0 0 rgba(233,30,99,0); }
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 480px) {
+            .team h3 { font-size: 12px; }
+            .team img { width: 38px; height: 38px; }
+            .match-center .vs-score { font-size: 17px; }
+            .match-center { flex: 0 0 88px; }
         }
     </style>
 </head>
@@ -251,7 +327,7 @@
 <main>
 
     <section class="container">
-        <div style="margin:8px 0;">
+        <div style="margin:10px 0;">
             <a href="https://t.me/keralablasterlink" target="_blank" class="join-telegram">JOIN US ON TELEGRAM</a>
             <a href="https://t.me/keralablasterlink" target="_blank" class="join-whatsapp">JOIN WHATSAPP GROUP 1</a>
             <a href="https://t.me/keralablasterlink" target="_blank" class="join-whatsapp">JOIN WHATSAPP GROUP 2</a>
@@ -261,7 +337,7 @@
     <section class="container">
 
         <div class="section-header">
-            <h2>Today's Matches</h2>
+            <span class="section-title-badge">Today's Matches</span>
             <div class="day-btns">
                 <button>Yesterday</button>
                 <button class="active">Today</button>
@@ -270,29 +346,28 @@
         </div>
 
         <!-- MATCH 1 -->
-<!-- MATCH 1 -->
-<a href="match1.html" style="text-decoration:none; color:inherit;">
-    <div class="match-card">
-        <div class="match-teams">
-            <div class="team">
-                <img src="images/team_images/royalrcb.png">
-                <h3>Royal Challengers Bengaluru</h3>
+        <a href="match1.html" style="text-decoration:none; color:inherit;">
+            <div class="match-card">
+                <div class="match-teams">
+                    <div class="team">
+                        <img src="images/team_images/royalrcb.png">
+                        <h3>Royal Challengers Bengaluru</h3>
+                    </div>
+                    <div class="match-center">
+                        <p>7:30 PM <span class="live-badge">🔴 LIVE</span></p>
+                        <div class="vs-score">VS</div>
+                        <img src="images/playbutton.jpg">
+                    </div>
+                    <div class="team team-right">
+                        <h3>Sunrisers Hyderabad</h3>
+                        <img src="images/team_images/sunrises.png">
+                    </div>
+                </div>
+                <div class="match-info">
+                    <span>IPL</span><span>Lamine Akku</span><span>beIN SPORTS 1</span>
+                </div>
             </div>
-            <div class="match-center">
-                <p>7:30 PM <span class="live-badge">🔴 LIVE</span></p>
-                <h3>VS</h3>
-                <img src="images/playbutton.jpg">
-            </div>
-            <div class="team team-right">
-                <h3>Sunrisers Hyderabad</h3>
-                <img src="images/team_images/sunrises.png">
-            </div>
-        </div>
-        <div class="match-info">
-            <span>IPL</span><span>Lamine Akku</span><span>beIN SPORTS 1</span>
-        </div>
-    </div>
-</a>
+        </a>
 
         <!-- MATCH 2 -->
         <a href="match2.html" style="text-decoration:none; color:inherit;">
@@ -304,7 +379,7 @@
                     </div>
                     <div class="match-center">
                         <p>4:45 AM <span class="live-badge">🔴 LIVE</span></p>
-                        <h3>VS</h3>
+                        <div class="vs-score">VS</div>
                         <img src="images/playbutton.jpg">
                     </div>
                     <div class="team team-right">
@@ -313,7 +388,7 @@
                     </div>
                 </div>
                 <div class="match-info">
-                    <span>INTERNATIONAL FRIENDLY </span><span>Lamine Akku</span><span>beIN SPORTS 1</span>
+                    <span>INTERNATIONAL FRIENDLY</span><span>Lamine Akku</span><span>beIN SPORTS 1</span>
                 </div>
             </div>
         </a>
@@ -328,7 +403,7 @@
                     </div>
                     <div class="match-center">
                         <p>7:45 PM <span class="live-badge">🔴 LIVE</span></p>
-                        <h3>VS</h3>
+                        <div class="vs-score">VS</div>
                         <img src="images/playbutton.jpg">
                     </div>
                     <div class="team team-right">
@@ -352,7 +427,7 @@
                     </div>
                     <div class="match-center">
                         <p>7:45 PM <span class="live-badge">🔴 LIVE</span></p>
-                        <h3>VS</h3>
+                        <div class="vs-score">VS</div>
                         <img src="images/playbutton.jpg">
                     </div>
                     <div class="team team-right">
@@ -383,7 +458,7 @@
     </div>
 </footer>
 
-<!-- 📱 MOBILE BOTTOM NAV -->
+<!-- MOBILE BOTTOM NAV -->
 <div class="bottom-nav">
     <a href="#" class="active">
         <i class="fas fa-home"></i>
@@ -419,9 +494,5 @@ if (localStorage.getItem("theme") === "dark") {
     document.getElementById("themeBtn").innerText = "☀️";
 }
 </script>
-
-<!-- 💰 ADSTERRA POPUNDER AD -->
-<script src="https://pl28958431.profitablecpmratenetwork.com/dc/38/5c/dc385cf6974a0b633107d49bf1ef3b1e.js"></script>
-
 </body>
 </html>
