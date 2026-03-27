@@ -1,293 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Spain vs Serbia</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spain Live Stream</title>
 
-<style>
-body {
-    background:#f5f5f5;
-    font-family:Arial;
-    margin:0;
-}
-.header {
-    background:#1f3c88;
-    color:white;
-    padding:15px;
-    text-align:center;
-    font-size:22px;
-    font-weight:bold;
-}
-.box {
-    background:white;
-    width:80%;
-    margin:20px auto;
-    border-radius:10px;
-    overflow:hidden;
-}
-.box-title {
-    background:#c0392b;
-    color:white;
-    padding:10px;
-    text-align:center;
-    font-weight:bold;
-}
-table {
-    width:100%;
-    border-collapse:collapse;
-}
-td {
-    padding:12px;
-    border:1px solid #ddd;
-}
-.btn {
-    display:block;
-    width:250px;
-    margin:30px auto;
-    padding:15px;
-    background:red;
-    color:white;
-    text-align:center;
-    border-radius:30px;
-    font-size:18px; /* ✅ LALIGApx fix */
-    text-decoration:none;
-}
-.section-title {
-    background:#1f3c88;
-    color:white;
-    padding:10px;
-    text-align:center;
-    font-weight:bold;
-    margin-top:30px;
-}
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0b1f3a;
+            color: white;
+        }
 
-/* ⚽ BOUNCING BALL */
-.ball-container {
-    text-align:center;
-    padding:10px 0 0 0;
-    height:80px;
-    overflow:hidden;
-}
-.ball {
-    font-size:40px;
-    display:inline-block;
-    animation: bounce 0.8s infinite alternate ease-in-out;
-}
-@keyframes bounce {
-    0%   { transform: translateY(0); }
-    100% { transform: translateY(-45px); }
-}
-.ball-shadow {
-    width:40px;
-    height:8px;
-    background:rgba(0,0,0,0.15);
-    border-radius:50%;
-    margin:0 auto;
-    animation: shadow 0.8s infinite alternate ease-in-out;
-}
-@keyframes shadow {
-    0%   { transform: scaleX(1); opacity:0.4; }
-    100% { transform: scaleX(0.5); opacity:0.1; }
-}
+        /* SHIMMER HEADER */
+        .header {
+            background: linear-gradient(90deg, #1e3c72, #2a5298, #1e3c72);
+            background-size: 200% auto;
+            animation: shimmer 3s linear infinite;
+            padding: 15px;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
 
-/* 🗳️ POLL */
-.poll-box {
-    background:white;
-    width:80%;
-    margin:20px auto;
-    border-radius:10px;
-    overflow:hidden;
-}
-.poll-title {
-    background:#1f3c88;
-    color:white;
-    padding:10px;
-    text-align:center;
-    font-weight:bold;
-}
-.poll-inner {
-    padding:20px;
-    text-align:center;
-}
-.poll-inner p {
-    font-size:18px;
-    font-weight:bold;
-    margin-bottom:15px;
-    color:#333;
-}
-.poll-buttons {
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    flex-wrap:wrap;
-    margin-bottom:20px;
-}
-.poll-btn {
-    padding:12px 25px;
-    border:none;
-    border-radius:25px;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:transform 0.2s, box-shadow 0.2s;
-}
-.poll-btn:hover {
-    transform:scale(1.05);
-    box-shadow:0 4px 12px rgba(0,0,0,0.2);
-}
-.btn-spurs  { background:#132257; color:white; }
-.btn-draw   { background:#888;    color:white; }
-.btn-forest { background:#DD0000; color:white; }
+        @keyframes shimmer {
+            0%   { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
 
-.poll-results { display:none; margin-top:10px; }
-.result-row { margin:10px 0; text-align:left; }
-.result-label { font-size:14px; font-weight:bold; margin-bottom:4px; color:#333; }
-.result-bar-bg { background:#eee; border-radius:20px; overflow:hidden; height:22px; }
-.result-bar {
-    height:22px;
-    border-radius:20px;
-    display:flex;
-    align-items:center;
-    padding-left:10px;
-    font-size:13px;
-    color:white;
-    font-weight:bold;
-    transition:width 1s ease;
-}
-.bar-spurs  { background:#132257; }
-.bar-draw   { background:#888; }
-.bar-forest { background:#DD0000; }
-.total-votes { color:#888; font-size:13px; margin-top:10px; }
-.voted-msg { color:green; font-weight:bold; margin-top:10px; font-size:15px; }
-</style>
+        /* FADE IN CONTAINER */
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #0f2a50;
+            border-radius: 10px;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            text-decoration: underline;
+        }
+
+        /* LINK BOX HOVER */
+        .link-box {
+            margin: 20px 0;
+            text-align: center;
+            background: #162d4e;
+            padding: 15px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .link-box:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 15px rgba(0, 136, 255, 0.5);
+        }
+
+        .link-box a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            margin-bottom: 5px;
+            padding: 10px;
+            border-radius: 8px;
+            background: #1e3c72;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .link-box a:hover {
+            background: #ff9800;
+            color: black;
+        }
+
+        .quality {
+            color: #00ff88;
+            font-size: 14px;
+        }
+
+        /* 🔴 LIVE BADGE */
+        .live-badge {
+            display: inline-block;
+            background: red;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-left: 10px;
+            animation: pulse 1.2s infinite;
+        }
+
+        @keyframes pulse {
+            0%   { box-shadow: 0 0 0 0 rgba(255,0,0,0.7); }
+            70%  { box-shadow: 0 0 0 10px rgba(255,0,0,0); }
+            100% { box-shadow: 0 0 0 0 rgba(255,0,0,0); }
+        }
+
+        /* TELEGRAM POPUP */
+        #telegramPopup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        /* POPUP POP-IN */
+        .popup-box {
+            background: #0f2a50;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 0 30px rgba(0,136,255,0.4);
+            animation: popIn 0.4s ease;
+        }
+
+        @keyframes popIn {
+            from { transform: scale(0.7); opacity: 0; }
+            to   { transform: scale(1);   opacity: 1; }
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .join-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 25px;
+            background: #0088cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: transform 0.2s ease;
+        }
+
+        .join-btn:hover {
+            background: #00aaff;
+            transform: scale(1.05);
+        }
+
+    </style>
 </head>
+
 <body>
 
-<!-- HEADER -->
 <div class="header">
-    Spain vs Serbia
+    Spain vs Serbia - Live Stream
+    <span class="live-badge">🔴 LIVE</span>
 </div>
 
-<!-- ⚽ BOUNCING BALL -->
-<div class="ball-container">
-    <div class="ball">⚽</div>
-</div>
-<div class="ball-shadow"></div>
+<div class="container">
 
-<!-- MATCH INFO -->
-<div class="box">
-    <div class="box-title">MATCH INFO</div>
-    <table>
-        <tr><td><b>Match</b></td><td>Spain vs Serbia</td></tr>
-        <tr><td><b>Competition</b></td><td>INTERNATIONAL FRIENDLY</td></tr> <!-- ✅ Laliga fix -->
-        <tr><td><b>Date</b></td><td>22-03-2026</td></tr>
-        <tr><td><b>Time</b></td><td>6:00 PM IST</td></tr>
-        <tr><td><b>Stadium</b></td><td> Stadium</td></tr>
-    </table>
-</div>
+    <h2>LIVE STREAMING LINKS</h2>
 
-
-<!-- CLICK BUTTON -->
-<a href="match3link.html" class="btn">
-    ▶ Click Here to Watch
-</a>
-
-<!-- STATS / TIMER -->
-<div class="box">
-    <div class="section-title">Match Stats And Info</div>
-    <div style="text-align:center; padding:20px;">
-        <h2>Match Starts In ⏱️ <span id="timer">00:00:00</span></h2>
-        <p>Waiting for kickoff...</p>
+    <div class="link-box">
+        <a href="https://link-center.net/4443652/fapllniDRy57" target="_blank">
+            ▶ Link 1 >> Spain vs Serbia
+        </a>
+        <div class="quality">Good Quality (Mobile) | 1080p</div>
     </div>
+
+    <div class="link-box">
+        <a href="https://securedq.blogspot.com/p/1.html" target="_blank">
+            ▶ Link 2 >> Spain vs Serbia
+        </a>
+        <div class="quality">Good Quality (Mobile) | SD</div>
+    </div>
+
+    <div class="link-box">
+        <a href="https://securedq.blogspot.com/p/46.html?slug=KEVILL" target="_blank">
+            ▶ Link 3 >> Spain vs Serbia
+        </a>
+        <div class="quality">Good Quality (PC) | HD</div>
+    </div>
+
+    <div class="link-box">
+        <a href="https://example4.com" target="_blank"> <!-- ⚠️ Real link ഇടണം -->
+            ▶ Link 4 >> Spain vs Serbia
+        </a>
+        <div class="quality">Good Quality | 1080p</div>
+    </div>
+
 </div>
 
-<!-- 🗳️ FAN POLL -->
-<div class="poll-box">
-    <div class="poll-title">🗳️ Fan Poll — Who Will Win?</div>
-    <div class="poll-inner">
-        <p>Cast your vote!</p>
-        <div class="poll-buttons" id="pollButtons">
-            <button class="poll-btn btn-spurs"  onclick="vote('spurs')">⚪ Spain</button>
-            <button class="poll-btn btn-draw"   onclick="vote('draw')">🤝 Draw</button>
-            <button class="poll-btn btn-forest" onclick="vote('forest')">🔴 Nott'm Forest</button>
-        </div>
-        <div class="poll-results" id="pollResults">
-            <div class="result-row">
-                <div class="result-label">⚪ Spain</div>
-                <div class="result-bar-bg">
-                    <div class="result-bar bar-spurs" id="bar-spurs" style="width:0%">
-                        <span id="pct-spurs">0%</span>
-                    </div>
-                </div>
-            </div>
-            <div class="result-row">
-                <div class="result-label">🤝 Draw</div>
-                <div class="result-bar-bg">
-                    <div class="result-bar bar-draw" id="bar-draw" style="width:0%">
-                        <span id="pct-draw">0%</span>
-                    </div>
-                </div>
-            </div>
-            <div class="result-row">
-                <div class="result-label">🔴 Serbia </div>
-                <div class="result-bar-bg">
-                    <div class="result-bar bar-forest" id="bar-forest" style="width:0%">
-                        <span id="pct-forest">0%</span>
-                    </div>
-                </div>
-            </div>
-            <div class="total-votes" id="totalVotes"></div>
-            <div class="voted-msg">✅ Thanks for voting!</div>
-        </div>
+
+
+<!-- TELEGRAM POPUP -->
+<div id="telegramPopup">
+    <div class="popup-box">
+
+        <span class="close-btn" onclick="closePopup()">✖</span>
+
+        <h2>Join Our Telegram Channel</h2>
+        <p style="color:#ccc;">
+            Get exclusive updates and live streams!
+        </p>
+
+        <a href="https://t.me/keralablasterlink" target="_blank" class="join-btn">
+            📲 Join Now
+        </a>
+
     </div>
 </div>
 
 <script>
-// Base votes
-let votes = { spurs: 158, draw: 45, forest: 112 };
-
-function vote(choice) {
-    votes[choice]++;
-    document.getElementById("pollButtons").style.display = "none";
-    document.getElementById("pollResults").style.display = "block";
-
-    let total = votes.spurs + votes.draw + votes.forest;
-    let pcts = {
-        spurs:  Math.round((votes.spurs  / total) * 100),
-        draw:   Math.round((votes.draw   / total) * 100),
-        forest: Math.round((votes.forest / total) * 100),
-    };
-
-    setTimeout(() => {
-        ["spurs","draw","forest"].forEach(k => {
-            document.getElementById("bar-" + k).style.width = pcts[k] + "%";
-            document.getElementById("pct-" + k).innerText   = pcts[k] + "%";
-        });
-        document.getElementById("totalVotes").innerText = "Total votes: " + total;
-    }, 100);
+function closePopup() {
+    document.getElementById("telegramPopup").style.display = "none";
 }
 
-// TIMER
-function updateTimer() {
-    let now = new Date();
-    let matchStart = new Date();
-    matchStart.setHours(18, 0, 0, 0); // ✅ 6:00 PM fix (7:45 ആയിരുന്നു)
-    if (matchStart < now) matchStart.setDate(matchStart.getDate() + 1); // ✅ tomorrow fix
-    let diff = Math.floor((matchStart - now) / 1000);
-    if (diff <= 0) {
-        document.getElementById("timer").innerText = "🔴 LIVE";
-        return;
-    }
-    let hrs  = Math.floor(diff / 3600);
-    let mins = Math.floor((diff % 3600) / 60);
-    let secs = diff % 60;
-    document.getElementById("timer").innerText =
-        String(hrs).padStart(2,'0') + ":" +
-        String(mins).padStart(2,'0') + ":" +
-        String(secs).padStart(2,'0');
-}
-setInterval(updateTimer, 1000);
-updateTimer(); // ✅ immediate call fix
+setTimeout(() => {
+    document.getElementById("telegramPopup").style.display = "flex";
+}, 2000);
 </script>
 
 </body>
